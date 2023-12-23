@@ -1,11 +1,11 @@
 import { JSX } from 'react';
 
-import style from './Nav.module.scss';
+import style from './Window.module.scss';
 
-export function Nav(): JSX.Element {
+export function Window(): JSX.Element {
     return (
         <div className={ style.container }>
-            NAV
+            window
         </div>
     );
 }
