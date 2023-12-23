@@ -1,9 +1,11 @@
+import { HomePage } from '@home';
+
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      HELIO HOME PAGE
+      <HomePage />
     </div>
   );
 }
