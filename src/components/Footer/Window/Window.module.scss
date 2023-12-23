@@ -1,4 +1,50 @@
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/utils.scss';
 
 div.container {
-    border: 2px solid blue;
+    // @include Debug();
+    min-height: 72px;
+    @include Rectangle(85%, auto);
+    @include GridCenter();
+
+    & > div {
+        min-height: 68px;
+        width: 85%;
+        @include Debug(yellow);
+
+        & > div.title {
+            @include Debug(pink);
+            height: 68px;
+
+            & > p {
+                @include Square(100%);
+                @include Debug(aqua);
+                // text-align: left;/
+                font-size: 30px;
+                @include Flex(column, flex-start)
+            }
+        }
+
+        & > div.body {
+            @include Debug(green);
+            width: 100%;
+            height: 100%;
+
+            & > div.description {
+                width: 100%;
+                // height: 100%;
+                & > div {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    @include Debug(blue);
+                    width: 100%;
+                    & > p {
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
 }

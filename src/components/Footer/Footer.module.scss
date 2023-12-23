@@ -1,6 +1,19 @@
-
+@import '../../sass/mixins/alignment.scss';
+@import '../../sass/mixins/border.scss';
+@import '../../sass/mixins/utils.scss';
 
 div.container {
     border: 2px solid yellow;
-    height: 805px;
+    // height: 805px;
+    // width: 100vw;
+
+    & > div.footer_container {
+        // width: 100vw;
+        @include Debug(green);
+
+        & > div.top {
+
+        }
+    }
+
 }
