@@ -6,6 +6,7 @@
 
 @mixin Flex($dir: row, $jus: center, $algn: center) {
     display: flex;
+    flex-direction: $dir;
     justify-content: $jus;
     align-items: $algn;
 }

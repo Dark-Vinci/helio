@@ -1,4 +1,6 @@
 import { JSX } from 'react';
+import { FiPlus } from "react-icons/fi";
+import { LuMinus } from "react-icons/lu";
 
 import style from './Window.module.scss';
 
@@ -17,22 +19,36 @@ export function Window({
     list,
     clickHandler,
 }: WindowProps): JSX.Element {
+    let openStyle = [style.body]
+    if (isOpened) {
+        openStyle.push(style.open)
+    }
+
     return (
         <div 
             className={ style.container }
-            onClick={() => clickHandler(title)}
         >
             <div className={ style.window_container }>
-                <div className={ style.title }>
+                <div 
+                    className={ style.title }
+                    onClick={() => clickHandler(title)}
+                >
                     <p>{ title }</p>
-                    <div className={ style.icon }>
-                        ICON
+                    <div 
+                        className={ style.icon }
+                        // update animation
+                    >
+                        {
+                            isOpened ?
+                                // <FiPlus />
+                                <LuMinus size={'30px'}/>
+                                : <FiPlus size={'30px'}/>
+                        }
                     </div>
                 </div>
 
                 <div 
-                    className={ style.body }
-                    style={{ height: isOpened ? 'auto' : '0'}}
+                    className={ openStyle.join(' ') }
                 >
                     {/* list of descriptions */}
                     <div className={ style.description }>
@@ -49,27 +65,27 @@ export function Window({
                         }
                     </div>
 
-                    {/* list of items */}
-                    {
-                        list.length > 0 ?
-                            <ul className={ style.list }>
-                                {
-                                    list.map((el, i) => {
-                                        return (
-                                            <li
-                                                key={i}
-                                            >
-                                                { el }
-                                            </li>
-                                        );
-                                    })
-                                }
-                            </ul>
-                            :
-                            null
-                    }
+                        {/* list of items */}
+                        {
+                            list.length > 0 ?
+                                <ul className={ style.list }>
+                                    {
+                                        list.map((el, i) => {
+                                            return (
+                                                <li
+                                                    key={i}
+                                                >
+                                                    { el }
+                                                </li>
+                                            );
+                                        })
+                                    }
+                                </ul>
+                                :
+                                null
+                        }
                 </div>
             </div>
-        </div>
+    </div>
     );
 }

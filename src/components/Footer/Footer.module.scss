@@ -1,39 +1,138 @@
 @import '../../sass/mixins/alignment.scss';
 @import '../../sass/mixins/border.scss';
 @import '../../sass/mixins/utils.scss';
+@import '../../sass/constant/color.scss';
 
 div.container {
-    border: 2px solid yellow;
-    // height: 805px;
-    // width: 100vw;
+    @include Rectangle(100vw, 110vh);
+    @include GridCenter();
+    // @include Debug(blue);
 
-    & > div.footer_container {
-        // width: 100vw;
-        @include Debug(green);
+    & > div.decoy {
+        @include Square(100%);
+        background-color: $footer-bg-color;
+        border-radius: 80px 80px 0 0;
+        @include GridCenter();
 
-        & > div.top {
-            & > div.title {
-                margin-top: 20px;
-                margin-bottom: 30px;
-                p {
-                    font-size: 50px;
-                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        & > div.footer_container {
+            height: 80%;
+            margin-top: 80px;
+            @include Flex(column, space-evenly);
+            width: 100%;
+            // @include Debug(green);
+    
+            & > div.bot {
+                @include GridCenter();
+                // @include Debug();
+                width: 100%;
+                min-height: 100px;
+                margin-bottom: 25px;
+    
+                & > div.bot_container {
+                    padding-top: 30px;
+                    width: 90%;
+                    @include Flex(row);
+                    border-top: 2px solid #E5E5E5;
+    
+                    & > * {
+                        flex-basis: 50%;
+                    }
+    
+                    & > div.right {
+                        // @include Debug(aqua);
+                        @include GridCenter();
+                        @include Rectangle(100%, 57px);
+    
+                        & > div.icons {
+                            width: 100%;
+                            @include Flex(row, flex-end, center);
+    
+                            & > * {
+                                width: 60px;
+                                color: #787878;
+                                &:hover {
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+    
+                    & > div.left {
+                        @include Rectangle(100%, 57px);
+    
+                        & > div.cont {
+                            @include GridCenter();
+                            // @include Debug(yellow);
+                            height: 100%;
+    
+                            & > * {
+                                width: 100%;
+                                @include Flex(row, flex-start);
+                                // @include Debug();
+                            }
+    
+                            & > ul {
+                                color: $footer-bot-color;
+                                list-style-type: none;
+                                // @include Debug(aqua);
+    
+                                li {
+                                    margin-right: 10px;
+                                    a {
+                                        text-decoration: none;
+                                        color: inherit;
+                                    }
+                                }
+                            }
+    
+                            & > div.top_cont {
+                                @include Flex(row, flex-start, flex-start);
+                                color: $footer-bot-color;
+    
+                                a {
+                                    text-decoration: none;
+                                        color: inherit;
+                                }
+                            }
+                        }
+                    }
                 }
             }
-
-            & > div.content {
-                & > div {
-                    @include GridCenter();
+    
+            & > div.top {
+                // @include Debug(green);
+                margin-bottom: 50px;
+    
+                & > div.title {
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                    p {
+                        font-size: 50px;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    }
+                }
+    
+                & > div.content {
                     width: 100%;
-                    border-bottom: 2px solid black;
+                    @include GridCenter();
                     & > div {
-                        width: 100%;
-                        margin-bottom: 20px;
                         @include GridCenter();
-                        // @include Debug(black);
-                        // border-bottom: 2px solid green;
-
-                        // &:is
+                        width: 95%;
+                        // @include Debug();
+    
+                        & > div {
+                            border-bottom: 2px solid #EAEAEA;
+                            width: 80vw;
+                            margin-bottom: 20px;
+                            // @include Flex(row, flex-start);
+                            @include Flex(row);
+                            min-height: 92px;
+                            // @include Debug(blue);
+                        }
+    
+                        & > div:last-child {
+                            border: none;
+                        }
                     }
                 }
             }
