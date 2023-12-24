@@ -12,7 +12,31 @@ div.container {
         @include Debug(green);
 
         & > div.top {
+            & > div.title {
+                margin-top: 20px;
+                margin-bottom: 30px;
+                p {
+                    font-size: 50px;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                }
+            }
 
+            & > div.content {
+                & > div {
+                    @include GridCenter();
+                    width: 100%;
+                    border-bottom: 2px solid black;
+                    & > div {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        @include GridCenter();
+                        // @include Debug(black);
+                        // border-bottom: 2px solid green;
+
+                        // &:is
+                    }
+                }
+            }
         }
     }
 

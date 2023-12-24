@@ -7,27 +7,32 @@ interface WindowProps {
     readonly isOpened: boolean;
     readonly description: string[];
     readonly list: string[];
+    clickHandler: (title: string) => void;
 }
 
 export function Window({
     title, 
     isOpened, 
     description, 
-    list 
+    list,
+    clickHandler,
 }: WindowProps): JSX.Element {
     return (
-        <div className={ style.container }>
+        <div 
+            className={ style.container }
+            onClick={() => clickHandler(title)}
+        >
             <div className={ style.window_container }>
                 <div className={ style.title }>
                     <p>{ title }</p>
-                    <div className="icon">
+                    <div className={ style.icon }>
                         ICON
                     </div>
                 </div>
 
                 <div 
                     className={ style.body }
-                    style={{ display: isOpened ? 'auto' : 'none'}}
+                    style={{ height: isOpened ? 'auto' : '0'}}
                 >
                     {/* list of descriptions */}
                     <div className={ style.description }>

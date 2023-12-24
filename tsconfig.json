@@ -41,6 +41,7 @@
     "paths": {
       "@components": ["./components"],
       "@home": ["./HomePage"],
+      "@constants": ["./constants"],
     }
   },
   "include": [
