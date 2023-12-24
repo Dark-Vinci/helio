@@ -9,3 +9,9 @@ echo 'PUSHING TO GITHUB'
 git push -u origin main
 
 echo '🚀🚀🚀PUSHED TO GITHUB🚀🚀🚀'
+
+# for name in "./src"/*; do
+#     if [ -f "$name" ]; then
+#         printf '%s is a file\n' "$name"
+#     fi
+# done
