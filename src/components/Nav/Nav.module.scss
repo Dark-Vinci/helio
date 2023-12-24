@@ -1,4 +1,43 @@
+@import '../../sass/mixins/alignment.scss';
+@import '../../sass/mixins/border.scss';
+@import '../../sass/mixins/utils.scss';
+@import '../../sass/constant/color.scss';
+
 div.container {
     border: 2px solid aqua;
     height: 96px;
+    @include Rectangle(100vw, 96px);
+
+    @include GridCenter();
+
+    & > div.nav_container {
+        @include Rectangle(1360px, 45px);
+        @include Debug(green);
+        @include Flex(row, space-between);
+
+        & > div {
+            flex-basis: 50%;
+        }
+
+        & > div.right {
+            & > div.right_container {
+                @include Flex(row, flex-end);
+
+                & > * {
+                    font-size: 20px;
+                    margin-right: 30px;
+                    @include Debug();
+                }
+
+                & > div {
+                    button {
+                        font-size: 20px;
+                        @include BgNCol(black, white);
+                        @include Rectangle(118px, 42px);
+                        @include Border();
+                    }
+                }
+            }
+        }
+    }
 }
