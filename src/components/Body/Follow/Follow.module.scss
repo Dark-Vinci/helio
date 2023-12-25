@@ -4,18 +4,23 @@
 @import '../../../sass/constant/color.scss';
 
 div.container {
-    @include Rectangle(100%, 568px);
+    @include Rectangle(90%, 568px);
     @include Flex(column, space-between);
+    @include Debug(blue);
 
     & > div.cards {
         @include Rectangle(100%, 490px);
-        // @include Debug();
+        @include Debug();
         @include Flex(row, space-around);
         flex-wrap: wrap;
+
+        // & > div {
+        //     // margin-right: 40px;
+        // }
     }
 
     & > div.top {
-        // @include Debug(rgb(2, 2, 2));
+        @include Debug(rgb(2, 2, 2));
         height: 49px;
         font-size: 40px;
     }

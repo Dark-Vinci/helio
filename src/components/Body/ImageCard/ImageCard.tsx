@@ -1,5 +1,7 @@
 import { JSX } from 'react';
 
+import style from './ImageCard.module.scss';
+
 interface ImageCardProps {
     readonly height: string;
     readonly imageUrl: string;
@@ -11,13 +13,13 @@ export function ImageCard({
     children,
     height,
 }: ImageCardProps): JSX.Element {
-    console.log({imageUrl, children});
     return (
         <div 
-            className="container"
+            className={ style.container }
             style={{
-                backgroundImage: imageUrl,
+                backgroundImage: `url(${imageUrl})`,
                 height,
+                border: '2px solid green'
             }}
         >
             {

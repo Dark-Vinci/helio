@@ -8,9 +8,82 @@ div.container {
     height: 4087px;
     @include GridCenter();
 
-    & > div {
+    & > div.body_container {
         @include Debug(aqua);
-        width: 80%;
+        // width: 100%;
+        // height: 
         @include Flex(column);
+
+        & div.maximum {
+            width: 90%;
+            height: 368px;
+            @include Debug(yellow);
+            @include Flex(row, space-between);
+
+            & > div {
+                flex-basis: 50%;
+                // @include Debug(blue);
+            }
+
+            & > div.right {
+                @include GridCenter();
+                @include Square(100%);
+                // @include Debug(tomato);
+                height: 100%;
+                flex-basis: 60%;
+
+                & > div.right_container {
+                    // @include Debug(black);
+                    @include Square(100%);
+                    @include Flex(column, center, flex-start);
+
+                    & > div {
+                        width: 100%;
+                        // @include Debug();
+
+                        &:first-child {
+                            word-break: keep-all;
+                            width: 100%;
+                            font-size: 40px;
+                            & > p {
+                                text-align: left;
+                                span {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            margin-top: 20px;
+                            color: $dol-text-description;
+                            p {
+                                text-align: left;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > div.left {
+                @include Square(100%);
+                & > div {
+                    object-fit: fill;
+                    @include Square(100%);
+                }
+            }
+        }
+
+        & > div.follow {
+            @include Debug(green);
+            @include GridCenter();
+        }
+
+        & > div.percent {
+            & > * {
+                // width: 80%;
+                // height: 80%;
+            }
+        }
     }
 }
