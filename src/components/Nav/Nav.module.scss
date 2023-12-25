@@ -7,7 +7,6 @@ div.container {
     border: 2px solid aqua;
     height: 96px;
     @include Rectangle(100vw, 96px);
-
     @include GridCenter();
 
     & > div.nav_container {
