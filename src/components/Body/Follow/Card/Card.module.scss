@@ -7,7 +7,7 @@ div.container {
     // @include Debug();
     @include Rectangle(310px, 225px);
     @include BgNCol($body-follow-card-bg-color, $body-follow-card-color);
-    border-radius: 40px;
+    border-radius: 60px;
     @include GridCenter();
 
     &:hover {

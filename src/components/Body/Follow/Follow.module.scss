@@ -1,4 +1,23 @@
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/utils.scss';
+@import '../../../sass/constant/color.scss';
 
 div.container {
-    border: 2px solid blue;
+    @include Rectangle(100%, 568px);
+    @include Flex(column, space-between);
+
+    & > div.cards {
+        @include Rectangle(100%, 490px);
+        // @include Debug();
+        @include Flex(row, space-around);
+        flex-wrap: wrap;
+    }
+
+    & > div.top {
+        // @include Debug(rgb(2, 2, 2));
+        height: 49px;
+        font-size: 40px;
+    }
 }
+

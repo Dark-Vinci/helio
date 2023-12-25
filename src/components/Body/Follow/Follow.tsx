@@ -1,3 +1,6 @@
+import { JSX } from 'react';
+
+import style from './Follow.module.scss';
 import { Card } from "./Card/Card";
 
 
@@ -10,11 +13,11 @@ const urls = [
 
 export function Follow(): JSX.Element {
     return (
-        <div className="container">
-            <div className="top">
+        <div className={ style.container }>
+            <div className={ style.top }>
                 <p>Follow Us</p>
             </div>
-            <div className="cards">
+            <div className={ style.cards }>
                 {
                     urls.map((el, i) => {
                         return (

@@ -1,6 +1,16 @@
-
+@import '../../sass/mixins/alignment.scss';
+@import '../../sass/mixins/border.scss';
+@import '../../sass/mixins/utils.scss';
+@import '../../sass/constant/color.scss';
 
 div.container {
     border: 2px solid purple;
     height: 4087px;
+    @include GridCenter();
+
+    & > div {
+        @include Debug(aqua);
+        width: 80%;
+        @include Flex(column);
+    }
 }

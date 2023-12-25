@@ -1,0 +1,10 @@
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/utils.scss';
+@import '../../../sass/constant/color.scss';
+
+div.container {
+    border-top: 1px solid blue;
+    width: 100%;
+    border-radius: 60px;
+}
