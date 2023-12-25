@@ -4,33 +4,111 @@
 @import '../../sass/constant/color.scss';
 
 div.container {
-    border: 2px solid purple;
     height: 4087px;
     @include GridCenter();
 
     & > div.body_container {
+        height: 100%;
         @include Debug(aqua);
-        @include Flex(column);
+        @include Flex(column, space-evenly);
+
+        & > div.contract {
+            // height: 100%;
+            width: 90%;
+            height: 632px;
+            @include Debug(aqua);
+
+            & > div.top {
+                @include Rectangle(100%, 82px);
+            }
+
+            & > div.cards {
+                @include Rectangle(100%, 490px);
+                height: 490px;
+            }
+        }
+
+        & > div.power {
+            // width: 90%;
+            margin-top: 50px;
+            // @include Debug(yellow);
+
+            div.power_container {
+                @include Square(100%);
+                // @include Debug();
+                @include GridCenter();
+
+                & > div.p_container {
+                    width: 100%;
+                    // @include Debug(green);
+                    @include Flex(row, flex-start);
+
+                    & > div {
+                        margin-left: 100px;
+                        @include Flex(column, space-between);
+                        // @include Debug();
+                        @include Rectangle(565px, auto);
+                        color: white;
+
+                        & > p {
+                            width: 100%;
+                            text-align: left;
+                            // @include Debug(red);
+
+                            &:first-child {
+                                // @include Debug(yellow);
+                                font-size: 50px;
+                            }
+
+                            &:nth-child(2) {
+                                margin-top: 20px;
+                                // @include Debug(white);
+                                font-size: 22px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         & > div.top {
-            @include Rectangle(90%, 87px);
+            // @include Rectangle(90%, 87px);
+            @include Debug(green);
+            width: 90%;
+            margin-bottom: 50px;
+
+            & > div.cards {
+                @include Flex(row);
+                // @include Debug(green);
+                width: auto;
+
+                & > div {
+                    margin: 10px;
+                    // @include Debug(gold)
+                }
+            }
+
+
             div.top_count {
-                @include Debug(black);
+                height: 87px;
+                margin-bottom: 80px;
+                // @include Debug(black);
                 @include Flex(row, space-between);
 
                 & > div {
-                    @include Debug(blue);
+                    // @include Debug(blue);
                     @include Rectangle(250px, 100%);
                     text-align: left;
 
-                    & > div {
-                        @include Debug();
-                    }
-
                     & > div:first-child {
+                        @include Rectangle(auto, 32px);
+                        @include Flex(row, flex-start);
                         p {
-                            height: 32px;
-                            border: 2px solid blue;
+                            color: $top-boxed-color;
+                            padding: 5px;
+                            border-radius: 10px;
+                            border: 1px solid $top-boxed-border;
                         }
                     }
 
@@ -41,15 +119,16 @@ div.container {
             }
         }
 
-        & div.maximum {
-            // width: 90%;
+        & > div.maximum {
             height: 368px;
+            margin-top: 100px;
+            width: 90%;
             @include Debug(yellow);
             @include Flex(row, space-between);
 
             & > div {
                 flex-basis: 50%;
-                // @include Debug(blue);
+                @include Debug(blue);
             }
 
             & > div.right {
@@ -102,14 +181,73 @@ div.container {
         }
 
         & > div.follow {
+            margin-top: 50px;
             @include Debug(green);
             @include GridCenter();
         }
 
         & > div.percent {
-            & > * {
-                // width: 80%;
-                // height: 80%;
+            margin-top: 50px;
+            @include Debug(yellow);
+
+            div.percent_content {
+                @include Square(100%);
+                // @include Debug();
+                @include GridCenter();
+
+                & > div.p_container {
+                    // @include Debug(green);
+                    @include Rectangle(565px, 343px);
+                    @include Flex(column, space-between);
+
+                    & > div {
+                        // @include Debug(blue);
+
+                        &:first-child {
+                            p {
+                                color: #1F1F1F;
+                                font-size: 90px;
+                                font-weight: 30px;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            width: 100%;
+                            p {
+                                @include GridCenter();
+                                height: 41px;
+                                font-size: 45px;
+                                width: 100%;
+                                margin-bottom: 20px;
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            p {
+                                height: 24px;
+                            }
+                        }
+
+                        &:last-child {
+                            width: 100%;
+
+                            button {
+                                width: 260px;
+                                height: 70px;
+                                background-color: black;
+                                color: white;
+                                border-radius: 50px;
+                                border: none;
+                                font-size: 30px;
+
+                                &:hover {
+                                    background-color: white;
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

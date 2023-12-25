@@ -5,9 +5,35 @@
 
 
 div.container {
-    @include Debug();
+    // @include Debug();
     @include Rectangle(415px, 365px);
     border-radius: 40px;
+    padding: 20px;
     background-color: #F2F2F2;
-    color: black;
+    @include Flex(column, space-evenly);
+
+    & > div {
+        width: 100%;
+        // border-radius: 30px;
+        // height: 30px;
+        @include Flex(row, flex-end);
+        p {
+            color: $top-boxed-color;
+            width: 150px;
+            border-radius: 30px;
+            height: 30px;
+            background-color: white;
+            @include GridCenter();
+        }
+    }
+
+    & > img {
+        @include Square(200px);
+    }
+
+    & > p {
+        color: black;
+        height: 56px;
+        font-size: 20px;
+    }
 }

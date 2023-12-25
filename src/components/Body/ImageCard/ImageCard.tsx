@@ -19,7 +19,6 @@ export function ImageCard({
             style={{
                 backgroundImage: `url(${imageUrl})`,
                 height,
-                border: '2px solid green'
             }}
         >
             {

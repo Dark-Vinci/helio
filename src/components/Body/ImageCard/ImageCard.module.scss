@@ -4,10 +4,9 @@
 @import '../../../sass/constant/color.scss';
 
 div.container {
-    border-top: 1px solid blue;
     width: 90vw;
     border-radius: 60px;
-    // height: 650px;
-    @include Debug();
-    background-size: 100% 100%;
+    // @include Debug();
+    background-size: 150% 140%;
+    background-position: 30px;
 }
