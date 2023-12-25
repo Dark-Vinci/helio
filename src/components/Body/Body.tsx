@@ -4,10 +4,57 @@ import style from './Body.module.scss';
 import { Follow } from './Follow';
 import { ImageCard } from './ImageCard';
 
+const topCard = [
+    {
+        amount: '$55,917,143',
+        title: 'TVL',
+    },
+
+    {
+        amount: '$21,212,064',
+        title: 'Total HAY Borrowed',
+    },
+
+    {
+        amount: '$300,847',
+        title: 'HELIO Stabilization Pool',
+    },
+
+    {
+        amount: '3,602',
+        title: 'Total Borrowers',
+    },
+];
+
 export function Body(): JSX.Element {
     return (
         <div className={ style.container }>
             <div className={ style.body_container }>
+                <div className={ style.top }>
+                    <div className={ style.top_count }>
+                        {
+                            topCard.map(({amount, title}, i) => {
+                                return (
+                                    <div
+                                        key={i}
+                                    >
+                                        <div>
+                                            <p>{ title }</p>
+                                        </div>
+                                        <div>
+                                            <p>{ amount }</p>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+
+                    <div className={ style.cards }>
+                        
+                    </div>
+                </div>
+
                 <div className={ style.maximum }>
                     <div className={ style.left }>
                         <img 

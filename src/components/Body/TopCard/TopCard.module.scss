@@ -1,0 +1,13 @@
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/utils.scss';
+@import '../../../sass/constant/color.scss';
+
+
+div.container {
+    @include Debug();
+    @include Rectangle(415px, 365px);
+    border-radius: 40px;
+    background-color: #F2F2F2;
+    color: black;
+}

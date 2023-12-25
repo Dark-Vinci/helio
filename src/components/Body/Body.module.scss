@@ -10,12 +10,39 @@ div.container {
 
     & > div.body_container {
         @include Debug(aqua);
-        // width: 100%;
-        // height: 
         @include Flex(column);
 
+        & > div.top {
+            @include Rectangle(90%, 87px);
+            div.top_count {
+                @include Debug(black);
+                @include Flex(row, space-between);
+
+                & > div {
+                    @include Debug(blue);
+                    @include Rectangle(250px, 100%);
+                    text-align: left;
+
+                    & > div {
+                        @include Debug();
+                    }
+
+                    & > div:first-child {
+                        p {
+                            height: 32px;
+                            border: 2px solid blue;
+                        }
+                    }
+
+                    & > div:last-child {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+
         & div.maximum {
-            width: 90%;
+            // width: 90%;
             height: 368px;
             @include Debug(yellow);
             @include Flex(row, space-between);
