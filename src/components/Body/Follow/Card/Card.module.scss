@@ -1,0 +1,31 @@
+@import '../../../../sass/mixins/alignment.scss';
+@import '../../../../sass/mixins/border.scss';
+@import '../../../../sass/mixins/utils.scss';
+@import '../../../../sass/constant/color.scss';
+
+div.container {
+    // @include Debug();
+    @include Rectangle(310px, 225px);
+    @include BgNCol($body-follow-card-bg-color, $body-follow-card-color);
+    border-radius: 40px;
+    @include GridCenter();
+
+    &:hover {
+        @include BgNCol($body-follow-card-hover-bg-color, $body-follow-card-color);
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+
+        & > img {
+            @include BgNCol($body-follow-card-hover-bg-color, $body-follow-card-color);
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    }
+
+    & > img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: 0.3;
+    }
+}
