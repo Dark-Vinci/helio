@@ -4,48 +4,8 @@ import style from './Body.module.scss';
 import { Follow } from './Follow';
 import { ImageCard } from './ImageCard';
 import { TopCard } from './TopCard';
-
-const bigCard = [
-    {
-        isComingSoon: false,
-        imgUrl: 'https://helio.money/_next/static/media/feature1.4ba56157.png',
-        description: 'Provide BNB collateral to borrow the HAY stablecoin',
-    },
-
-    {
-        isComingSoon: false,
-        imgUrl: 'https://helio.money/_next/static/media/feature2.82a16b97.png',
-        description: 'Yield farm HAY on trusted partner DEXes for competitive APY',
-    },
-
-    {
-        isComingSoon: true,
-        imgUrl: 'https://helio.money/_next/static/media/feature3.02fcebaf.png',
-        description: 'Get HELIO tokens as a reward for minting HAY',
-    },
-];
-
-const topCard = [
-    {
-        amount: '$55,917,143',
-        title: 'TVL',
-    },
-
-    {
-        amount: '$21,212,064',
-        title: 'Total HAY Borrowed',
-    },
-
-    {
-        amount: '$300,847',
-        title: 'HELIO Stabilization Pool',
-    },
-
-    {
-        amount: '3,602',
-        title: 'Total Borrowers',
-    },
-];
+import { FlipCard } from './FlipCard';
+import { topCard, bigCard, flipCards } from '@constants';
 
 export function Body(): JSX.Element {
     return (
@@ -132,7 +92,21 @@ export function Body(): JSX.Element {
                     </div>
 
                     <div className={ style.cards }>
-                        CARDS
+                        {
+                            flipCards.map(({url, title, backs}, i) => {
+                                return (
+                                    <div
+                                        key={i}
+                                    >
+                                        <FlipCard 
+                                            backs={backs} 
+                                            title={title} 
+                                            url={url}
+                                        />
+                                    </div>
+                                );
+                            })
+                        }
                     </div>
                 </div>
 

@@ -1,3 +1,41 @@
+@import '../../../sass/mixins/alignment.scss';
+@import '../../../sass/mixins/border.scss';
+@import '../../../sass/mixins/utils.scss';
+@import '../../../sass/constant/color.scss';
+
 div.container {
     border-top: 1px solid blue;
+    width: 310px;
+    height: 225px;
+    @include Rectangle(310px, 225px);
+    @include GridCenter();
+    color: #070707;
+    border: 1px solid #B2B2B2;
+    border-radius: 50px;
+
+    & > div.front {
+        height: 43px;
+        @include Flex();
+
+        & > img {
+            object-fit: fill;
+        }
+    }
+
+    & > div.back {
+        display: none;
+    }
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+
+        & > div.back {
+            @include Flex();
+        }
+
+        & > div.front {
+            display: none;
+        }
+    }
 }
