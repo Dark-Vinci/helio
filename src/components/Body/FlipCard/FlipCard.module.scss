@@ -24,6 +24,9 @@ div.container {
 
     & > div.back {
         display: none;
+        ul {
+            list-style-type: none;
+        }
     }
 
     &:hover {

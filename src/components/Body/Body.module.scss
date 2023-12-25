@@ -9,28 +9,40 @@ div.container {
 
     & > div.body_container {
         height: 100%;
-        @include Debug(aqua);
+        // @include Debug(aqua);
         @include Flex(column, space-evenly);
 
         & > div.contract {
-            // height: 100%;
             width: 90%;
             height: 632px;
-            @include Debug(aqua);
+            // @include Debug(aqua);
+            @include Flex(column, space-between);
 
             & > div.top {
+                // @include Debug();
                 @include Rectangle(100%, 82px);
+                font-size: 38px;
+                font-weight: 20px;
+                width: 1100px;
+                @include GridCenter();
             }
 
             & > div.cards {
                 @include Rectangle(100%, 490px);
                 height: 490px;
+                // @include Debug(green);
+                @include Flex();
+                flex-wrap: wrap;
+
+                & > * {
+                    margin: 0  20px 0 20px;
+                }
             }
         }
 
         & > div.power {
             // width: 90%;
-            margin-top: 50px;
+            // margin-top: 50px;
             // @include Debug(yellow);
 
             div.power_container {
@@ -74,9 +86,9 @@ div.container {
 
         & > div.top {
             // @include Rectangle(90%, 87px);
-            @include Debug(green);
+            // @include Debug(green);
             width: 90%;
-            margin-bottom: 50px;
+            // margin-bottom: 50px;
 
             & > div.cards {
                 @include Flex(row);
@@ -121,9 +133,9 @@ div.container {
 
         & > div.maximum {
             height: 368px;
-            margin-top: 100px;
+            // margin-top: 100px;
             width: 90%;
-            @include Debug(yellow);
+            // @include Debug(yellow);
             @include Flex(row, space-between);
 
             & > div {
@@ -181,14 +193,14 @@ div.container {
         }
 
         & > div.follow {
-            margin-top: 50px;
-            @include Debug(green);
+            // margin-top: 50px;
+            // @include Debug(green);
             @include GridCenter();
         }
 
         & > div.percent {
-            margin-top: 50px;
-            @include Debug(yellow);
+            // margin-top: 50px;
+            // @include Debug(yellow);
 
             div.percent_content {
                 @include Square(100%);
