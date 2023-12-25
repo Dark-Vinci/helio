@@ -21,9 +21,6 @@ div.container {
 
         & > div.left {
             @include Flex(row, flex-start);
-            img {
-
-            }
         }
 
         & > div.right {
