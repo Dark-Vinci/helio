@@ -2,4 +2,11 @@
 
 div.container {
     border: 1px solid blue;
+
+    & > nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+    }
 }

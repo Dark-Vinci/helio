@@ -4,6 +4,9 @@
 }
 
 @mixin Border($col: blue, $wid: 2px, $radius: 0) {
+    // if $wid == 0 {
+
+    // }
     border: $wid solid $col;
     border-radius: $radius;
 }
