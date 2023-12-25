@@ -58,6 +58,11 @@ div.container {
                             border-radius: 50px;
                             border: none;
                             font-size: 25px;
+
+                            &:hover {
+                                background-color: black;
+                                color: white;
+                            }
                         }
                     }
 

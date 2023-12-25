@@ -133,14 +133,13 @@ div.container {
 
         & > div.maximum {
             height: 368px;
-            // margin-top: 100px;
             width: 90%;
             // @include Debug(yellow);
             @include Flex(row, space-between);
 
             & > div {
                 flex-basis: 50%;
-                @include Debug(blue);
+                // @include Debug(blue);
             }
 
             & > div.right {
